@@ -1,0 +1,68 @@
+{
+  "name": "quotes",
+  "displayName": "arabic-Qoutes",
+  "description": "for motivation sentences",
+  "keywords": ["arabic", "quotes", "wisdom", "hikma", "motivation", "daily", "حكم", "أقوال"],
+  "publisher": "MoatazHelwa",
+  "icon": "icon.png",
+  "version": "1.3.0",
+  "engines": {
+    "vscode": "^1.105.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+  "onStartupFinished"
+],
+  "main": "./out/extension.js",
+  "files": [
+  
+],
+  "contributes": {
+    "commands": [
+    {
+      "command": "hukm.showQuote",
+      "title": "Hukm: Show Quote"
+    },
+   
+    {
+      "command": "hukm.openBubble",
+      "title": "Hukm: Open Bubble"
+    }
+  ],
+   "views": {
+   
+  },
+  "configuration": {
+    "type": "object",
+    "title": "Arabic Quotes Settings",
+    "properties": {
+      "hukmQuotes.mode": {
+      "type": "string",
+      "default": "quotes",
+      "enum": ["quotes", "azkar", "ayat"],
+      "description": "Select whether to display quotes, adhkar, or Quran ayat."
+}
+    }
+  }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.105.0",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "22.x",
+    "typescript-eslint": "^8.46.3",
+    "eslint": "^9.39.1",
+    "typescript": "^5.9.3",
+    "@vscode/test-cli": "^0.0.12",
+    "@vscode/test-electron": "^2.5.2"
+  }
+}
